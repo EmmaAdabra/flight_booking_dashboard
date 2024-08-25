@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+/* hiding the date icon for input type date */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="date"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/* hiding the date icon for input type date ends here */
