@@ -66,13 +66,14 @@ main {
 /** the side nav on pc and menu on tab and mobile device  **/
 .dashboard .left-pane {
   grid-column: 1 / 2;
+  grid-row: auto;
   /* width: 250px; */
   background-color: var(--dark-clr2);
   color: var(--light-text-2);
   text-transform: uppercase;
   font-size: 12px;
   transition: 0.3s ease-in-out;
-  /* letter-spacing: 1px; */
+  /* background-clip: padding-box; */
 }
 
 /*** user bio section of the nav ***/
@@ -114,6 +115,9 @@ main {
   display: flex;
   flex-direction: column;
   background-color: var(--dashboard-bg);
+  border-bottom: 1px solid var(--dark-clr2);
+  border-spacing: 0;
+  overflow: hidden;
 }
 
 .nav-links .space {
@@ -125,7 +129,15 @@ main {
 
 .left-pane .link {
   background-color: var(--dark-clr2);
+  box-shadow: 0 0 0 1px var(--dark-clr2);
+  /* transform: translateZ(0); */
+  /* overflow: hidden; */
   /* transition: 0.2 ease-in-out; */
+}
+
+.left-pane .link:hover {
+  box-shadow: 0 0 0 1px var(--dashboard-bg);
+  box-shadow: none;
 }
 
 .link a {
@@ -135,6 +147,7 @@ main {
   padding: 10px 0;
   padding-left: 30px;
   margin-left: 10px;
+  /* border: 1px solid red; */
 }
 
 .link a .link-icon {
@@ -157,7 +170,10 @@ main {
 /** nav footer container **/
 .left-pane-footer {
   padding-left: 40px;
-  padding-bottom: 20px;
+  padding-block: 20px;
+  border-top: 1px solid var(--dark-clr2);
+  border-top: 1px solid #5d7775;
+  border-radius: 0 0 30px 10px;
 }
 
 .left-pane-footer h3 {
@@ -225,8 +241,7 @@ main {
 }
 /** flight route container ends here **/
 /** nav footer container ends here **/
-.left-pane,
-.left-pane-footer {
+.left-pane {
   border-radius: 15px 30px 30px 15px;
 }
 /** the side nav on pc and menu on tab and mobile device  ends here**/
@@ -234,6 +249,7 @@ main {
 /* dashboard content */
 .dashboard .main-content {
   grid-column: 2 / -1;
+  grid-template-rows: auto;
   padding: 20px;
   font-weight: 500;
 }
@@ -281,11 +297,13 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
+  position: relative;
 }
 
 .column-1 ul .from {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -304,7 +322,9 @@ main {
 .column-1 ul .to {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
+  margin-right: auto;
 }
 
 .column-2 {
@@ -430,15 +450,25 @@ main {
   padding: 8px 20px;
 }
 
+.filter-param button:hover {
+  background-color: var(--light-text);
+}
+
 .filter-param .dropdown-title {
   border-radius: 30px;
+  gap: 0;
+
+}
+
+.filter-param i {
+  font-size: 16px;
+  margin-left: -5px;
 }
 
 /* book flight section */
 .main-content .book-flight {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* background-color: #d6a217; */
   grid-template-rows: auto;
   gap: 20px;
   font-size: 11px;
@@ -512,6 +542,7 @@ ul.card-container > li:nth-child(n + 2)::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   /* align-items: flex-end; */
 }
 
@@ -557,9 +588,9 @@ ul.card-container > li:nth-child(n + 2)::after {
   grid-row: auto;
   border-radius: 10px;
   font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  /* border: 1px solid gray; */
+  /* border: 1px solid black; */
+  max-height: fit-content;
+  background-color: var(--dark-clr2);
 }
 .right-side-map .flight-route-info {
   display: flex;
@@ -586,13 +617,13 @@ ul.card-container > li:nth-child(n + 2)::after {
   justify-content: flex-end;
 }
 
-.side-map-img-wrapper {
+.map-wrapper {
   width: 100%;
-  height: 45%;
+  height: 200px;
   position: relative;
 }
 
-.side-map-img-wrapper img {
+.map-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -628,11 +659,12 @@ img.flight-icon {
 }
 
 .trip-price-settings {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
   padding: 0 20px 20px 20px;
   border-radius: 0 0 10px 10px;
+  padding-bottom: 60px;
 }
 
 .trip-price-settings .price-rage {
@@ -770,11 +802,120 @@ img.flight-icon {
     z-index: 15;
     height: 100%;
     top: 0;
-    left: -150%;
+    left: -250%;
     box-shadow: 40px 0px 20px #aabebda8;
   }
 
   .dashboard .main-content {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard .left-pane {
+    height: fit-content;
+    box-shadow: 40px 30px 40px 10px #aabebda8;
+  }
+  .row-1,
+  .row-2 {
+    flex-direction: column;
+    /* border: 1px solid black; */
+  }
+  
+  .row-1 .column-1 {
+    width: 100%;
+    /* border: 1px solid blue; */
+  }
+  .column-1 ul .to, .column-1 ul .from {
+    flex-grow: 1; 
+    justify-content: center;
+    /* width: 100%;    */
+  }
+
+  .flight-route {
+    width: 100%;
+  }
+
+  .main-content .book-flight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    font-size: 11px;
+  }
+
+  .book-flight .booking-section {
+    grid-column: 1 / -1;
+
+  }
+
+  .book-flight .right-side-map {
+    grid-column: 1 / -1;
+    font-size: 12px;
+  }
+  .right-side-map .flight-route-info {
+    justify-content: space-evenly;
+  }
+
+  .side-map-img-wrapper {
+  height: 30%;
+}
+  .picker-btn-container {
+    justify-content: space-evenly;
+    /* gap: 15px; */
+  }
+
+  .trip-pattern {
+    font-size: 11px;
+  }
+  
+  .trip-pattern .custom-option.selected,
+  .price-indicator button {
+    padding: 8px 15px;
+  }
+  }
+
+@media only screen and (max-width: 640px) {
+  .left-pane .link a:hover {
+  box-shadow: 0 0 0 1px var(--dashboard-bg);
+  }
+  .column-1 .flight-route {
+    flex-direction: column;
+    /* border: 1px solid black; */
+  }
+
+  .row-1 .column-1 {
+    background-color: transparent
+  }
+
+  .column-1 ul .to, .column-1 ul .from {
+    background-color: var(--dashboard-bg);
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 100%;
+  }
+  .column-1 ul .to {
+    margin-right: 0;
+  }
+
+  .from .custom-select-container, .to .custom-select-container {
+    /* border: 1px solid red; */
+    flex-grow: 1;
+  }
+  .to .custom-select-input, .from .custom-select-input {
+    width: 100%;
+  }
+
+  .flight-route .swap-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .trip-pattern .custom-option.selected,
+  .price-indicator button {
+    /* padding: 8px 15px; */
+    font-size: 10px;
   }
 }
