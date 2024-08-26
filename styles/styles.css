@@ -738,6 +738,7 @@ img.flight-icon {
   height: 25px;
   background-color: transparent;
   z-index: 20;
+  cursor: pointer;
 }
 
 .hamburger .bar,
