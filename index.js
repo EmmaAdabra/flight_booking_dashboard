@@ -1,4 +1,3 @@
-
 // adds an empty li element at the beginning and ending of nav-links ul element
 {
   // console.log("got in")
@@ -6,10 +5,27 @@
   let firstLi = document.createElement("li");
   firstLi.classList.add("space");
   linksContainer.prepend(firstLi);
-  
+
   let lastLi = document.createElement("li");
   lastLi.classList.add("space");
   linksContainer.appendChild(lastLi);
+}
+
+// show menu on smaller screen
+{
+  const leftPane = document.querySelector(".left-pane");
+  const hamburger = document.querySelector(".hamburger");
+  hamburger.addEventListener("click", function () {
+    this.classList.toggle("active");
+    leftPane.classList.toggle("show-menu");
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".left-pane") && !e.target.closest(".hamburger")) {
+        hamburger.classList.remove("active");
+        leftPane.classList.remove("show-menu");
+      }
+    });
+  });
 }
 
 // nav links over effects
@@ -85,7 +101,7 @@ document.querySelectorAll(".custom-select-container").forEach((container) => {
   initializeCustomSelect(container);
 });
 
-// select dropdown without input 
+// select dropdown without input
 function initializeCustomPicker(container) {
   const dropdownTitle = container.querySelector(".dropdown-title");
   const dropdownTitleTxt = container.querySelector(".tittle-text");
@@ -118,7 +134,7 @@ document.querySelectorAll(".custom-pick-container").forEach((container) => {
   initializeCustomPicker(container);
 });
 
-  // select number of travelers
+// select number of travelers
 const selectTravelers = document.querySelector(".no-of-travelers");
 const container = document.querySelector(".select-traveler");
 const inputField = container.querySelector(".custom-select-input");
@@ -177,15 +193,17 @@ swapDestination.addEventListener("click", () => {
 function basicCustomSelect(tripOption) {
   const optContainers = document.querySelectorAll(tripOption);
 
-  optContainers.forEach(container => {
+  optContainers.forEach((container) => {
     const options = container.querySelectorAll(".custom-option");
 
-    options.forEach(option => {
+    options.forEach((option) => {
       option.addEventListener("click", (e) => {
         // console.log("got in")
-        const clickedOption = e.currentTarget; 
-        const parentContainer = clickedOption.closest(tripOption); 
-        const previouslySelected = parentContainer.querySelector(".custom-option.selected");
+        const clickedOption = e.currentTarget;
+        const parentContainer = clickedOption.closest(tripOption);
+        const previouslySelected = parentContainer.querySelector(
+          ".custom-option.selected"
+        );
 
         if (previouslySelected !== clickedOption) {
           previouslySelected.classList.remove("selected");

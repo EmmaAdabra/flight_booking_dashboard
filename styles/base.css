@@ -25,6 +25,12 @@ button {
   outline: none;
 }
 
+ul>li.link {
+  border: none;
+  outline: none;
+}
+
+
 /* hiding the date icon for input type date */
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
