@@ -127,7 +127,7 @@ main {
   background-color: var(--dark-clr2);
 }
 
-.left-pane .link {
+.left-pane li {
   background-color: var(--dark-clr2);
   box-shadow: 0 0 0 1px var(--dark-clr2);
   /* transform: translateZ(0); */
