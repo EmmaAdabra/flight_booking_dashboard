@@ -809,6 +809,10 @@ img.flight-icon {
   .dashboard .main-content {
     grid-column: 1 / -1;
   }
+
+  .left-pane .link a:hover {
+    box-shadow: 0 0 0 1px var(--dashboard-bg);
+    }
 }
 
 @media (max-width: 768px) {
@@ -876,9 +880,6 @@ img.flight-icon {
   }
 
 @media only screen and (max-width: 640px) {
-  .left-pane .link a:hover {
-  box-shadow: 0 0 0 1px var(--dashboard-bg);
-  }
   .column-1 .flight-route {
     flex-direction: column;
     /* border: 1px solid black; */
