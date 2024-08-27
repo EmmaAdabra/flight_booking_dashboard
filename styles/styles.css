@@ -287,10 +287,14 @@ main {
   background-color: var(--dashboard-bg);
   padding: 5px 20px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 15px;
   border-radius: 30px;
+}
+
+.column-1{
+  width: 60%
 }
 
 .column-1 .flight-route {
@@ -327,16 +331,19 @@ main {
   margin-right: auto;
 }
 
+
 .column-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  width: 40%;
+  border: 1px solid blue;
 }
 
 .column-2 .calender {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 10px;
   background-color: var(--dashboard-bg);
@@ -379,14 +386,16 @@ main {
 
 /* second details */
 .column-1.choose-trip {
-  padding: 5px;
-  padding-inline: 10px;
+  /* padding: 5px; */
+  /* padding-inline: 10px; */
+  border: 1px solid black;
 }
 
 .picker-btn-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #c99c33;
   /* gap: 15px; */
 }
 
@@ -821,6 +830,11 @@ img.flight-icon {
     height: fit-content;
     box-shadow: 40px 30px 40px 10px #aabebda8;
   }
+
+  .first-section div {
+    width: 100%;
+  }
+
   .row-1,
   .row-2 {
     flex-direction: column;
