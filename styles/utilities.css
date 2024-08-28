@@ -3,6 +3,10 @@
   /* background-color: orange; */
 }
 
+.bug-border {
+  border:  1px solid red !important;
+}
+
 .btn {
   border-radius: 30px;
   padding: 12px 40px;

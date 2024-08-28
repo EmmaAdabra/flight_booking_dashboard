@@ -861,14 +861,11 @@ img.flight-icon {
     flex-grow: 1;
     justify-content: center;
     width: 100%;
+    padding-left: 10px;
   }
 
   .flight-route {
     width: 100%;
-  }
-
-  .trip-type {
-    padding-inline: 0;
   }
 
   .main-content .book-flight {
@@ -922,7 +919,7 @@ img.flight-icon {
   .column-1 ul .to,
   .column-1 ul .from {
     background-color: var(--dashboard-bg);
-    padding: 10px 20px;
+    padding-block: 10px;
     border-radius: 30px;
     width: 100%;
   }
@@ -952,4 +949,8 @@ img.flight-icon {
     /* padding: 8px 15px; */
     font-size: 10px;
   }
+}
+
+@media only screen and (max-width: 474px) {
+  
 }
