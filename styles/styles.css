@@ -831,7 +831,6 @@ img.flight-icon {
     grid-column: 1 / -1;
     position: sticky;
     z-index: 20;
-    /* overflow: hidden; */
   }
 
   main {
@@ -859,7 +858,6 @@ img.flight-icon {
 @media (max-width: 768px) {
   .dashboard .left-pane {
     height: fit-content;
-    box-shadow: 40px 30px 40px 10px #aabebda8;
   }
 
   .dashboard #menu{
@@ -873,12 +871,10 @@ img.flight-icon {
   .row-1,
   .row-2 {
     flex-direction: column;
-    /* border: 1px solid black; */
   }
 
   .row-1 .column-1 {
     width: 100%;
-    /* border: 1px solid blue; */
   }
 
   .column-1 .flight-route {
@@ -941,7 +937,6 @@ img.flight-icon {
 
   .column-1 .flight-route {
     flex-direction: column;
-    /* border: 1px solid black; */
   }
 
   .row-1 .column-1 {
@@ -961,7 +956,6 @@ img.flight-icon {
 
   .from .custom-select-container,
   .to .custom-select-container {
-    /* border: 1px solid red; */
     flex-grow: 1;
   }
   .to .custom-select-input,
@@ -978,7 +972,6 @@ img.flight-icon {
 
   .trip-pattern .custom-option.selected,
   .price-indicator button {
-    /* padding: 8px 15px; */
     font-size: 10px;
   }
 }
