@@ -13,20 +13,56 @@
 
 // show menu on smaller screen
 {
-  const leftPane = document.querySelector(".left-pane");
+  const menu = document.querySelector("#menu");
   const hamburger = document.querySelector(".hamburger");
   hamburger.addEventListener("click", function () {
     this.classList.toggle("active");
-    leftPane.classList.toggle("show-menu");
+    menu.classList.toggle("show-menu");
 
     document.addEventListener("click", (e) => {
-      if (!e.target.closest(".left-pane") && !e.target.closest(".hamburger")) {
+      if (!e.target.closest("#menu") && !e.target.closest(".hamburger")) {
         hamburger.classList.remove("active");
-        leftPane.classList.remove("show-menu");
+        menu.classList.remove("show-menu");
       }
     });
   });
 }
+
+// when side menu reach top of the screen, let top border radius be zero
+window.addEventListener("scroll", () => {
+  // const menu = document.querySelector(".left-pane");
+  const leftPane = document.querySelector(".left-pane");
+  console.log(leftPane)
+  const leftPaneRect = leftPane.getBoundingClientRect();
+
+  if(leftPaneRect.top <= 0){
+    console.log("left hit top of screen")
+    leftPane.classList.add("top-radius-zero");
+  } else{
+    leftPane.classList.remove("top-radius-zero");
+  }
+})
+
+// using intersection observer call back
+// {
+//   const menu = document.querySelector("#menu");
+//   const userBio = document.querySelector(".user-bio");
+
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           userBio.classList.add("top-radius-zero");
+//         } else {
+//           userBio.classList.remove("top-radius-zero");
+//         }
+//       });
+//     },
+//     { root: null, rootMargin: "0px", threshold: 0.5 }
+//   );
+
+//   observer.observe(menu);
+// }
 
 // nav links over effects
 const navLinks = document.querySelectorAll(".link");
