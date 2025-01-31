@@ -30,20 +30,3 @@ ul>li.link {
   border: none;
   outline: none;
 }
-
-
-/* hiding the date icon for input type date */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-input[type="date"]::-moz-calendar-picker-indicator {
-    display: none;
-}
-
-input[type="date"]::-ms-clear {
-    display: none;
-    width: 0;
-    height: 0;
-}
-/* hiding the date icon for input type date ends here */
