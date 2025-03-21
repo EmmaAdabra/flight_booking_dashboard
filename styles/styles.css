@@ -61,7 +61,6 @@ main {
   border-radius: 15px;
   box-shadow: 2px 40px 20px 0px #aabebda8;
   -webkit-box-shadow: 2px 40px 20px 0px #aabebda8;
-  position: relative;
   height: 95vh;
   position: fixed;
   top: 50%;
@@ -973,9 +972,15 @@ img.flight-icon {
   main {
     overflow-y: auto;
     height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
   }
+
   .dashboard {
-    height: 100vh;
+    height: 100%;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
   }
   .dashboard #menu {
     width: 60%;
