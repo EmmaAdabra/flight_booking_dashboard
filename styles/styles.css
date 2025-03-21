@@ -984,6 +984,7 @@ img.flight-icon {
   }
   .dashboard #menu {
     width: 60%;
+    height: 90vh;
   }
 
   .dashboard .left-pane {
